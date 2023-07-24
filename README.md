@@ -1,5 +1,5 @@
 [# Mod-5-assignment](https://zombear323.github.io/Mod-5-assignment/)
-
+https://github.com/Zombear323/Mod-5-assignment
 <h2>User Story</h2>
 - AS AN employee with a busy schedule
 - I WANT to add important events to a daily planner
@@ -19,3 +19,5 @@
 - THEN the text for that event is saved in local storage
 - WHEN I refresh the page
 - THEN the saved events persist
+
+![image](https://github.com/Zombear323/Mod-5-assignment/assets/129801201/411419fe-053f-4ffe-a079-d57766322f1a)
