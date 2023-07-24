@@ -11,13 +11,30 @@ var timeSlot7 = $('#hour-3')
 var timeSlot8 = $('#hour-4')
 var timeSlot9 = $('#hour-5')
 
+var timeCode1 = 'hour-9'
+var timeCode2 = 'hour-10'
+var timeCode3 = 'hour-11'
+var timeCode4 = 'hour-12'
+var timeCode5 = 'hour-1'
+var timeCode6 = 'hour-2'
+var timeCode7 = 'hour-3'
+var timeCode8 = 'hour-4'
+var timeCode9 = 'hour-5'
+
 var timeLine = [timeSlot1, timeSlot2, timeSlot3, timeSlot4, timeSlot5, timeSlot6, timeSlot7, timeSlot8, timeSlot9]
+var timeCoder = [timeCode1, timeCode2, timeCode3, timeCode4, timeCode5, timeCode6, timeCode7, timeCode8, timeCode9]
 
 var time = dayjs().format('H');
 var timecon = dayjs().format('H');
 var date = dayjs().format('MMMM D, YYYY');
 console.log(time);
 console.log(date);
+
+for (let index = 0; index < timeLine.length; index++) {
+  var notesvd = localStorage.getItem(timeCoder[index]);
+  console.log(notesvd);
+  timeLine[index].children('textarea').text(notesvd);
+}
 
 $('#currentDay').text(date);
 
@@ -32,13 +49,13 @@ $(function() {
     var done = index - fut
     timeLine[done].addClass('future'); 
   }
-  // var text = localStorage.getItem("text");
+
 });
 
-// var saveButton = $('#saveBtn')
-// var desc = $('#description')
+var saveButton = $('.saveBtn')
+var desc = $('.description')
 
-// // save function needs work
+// save function needs work
 
 // function saveText() {
 //   var svdnote = desc.value
@@ -46,15 +63,19 @@ $(function() {
 // }
 // function makeText() {
 //   var noteCall = JSON.parse(localStorage.getItem("svdnote"));
-//   desc.innerHTML = noteCall;
+//   desc.val(noteCall);
 // }
+// // var notesvd = localStorage.getItem("#hour-9", svdnote);
+// console.log(notesvd)
 
-// saveButton.on("click", function(event) {
-//   event.preventDefault();
-//   saveText();
-//   makeText();
-//   console.log("test");
-//   });
+saveButton.on("click", function(event) {
+  event.preventDefault();
+  var svdnote = $(this).siblings(".description").val()
+  var timeBlk = $(this).parent().attr("id")
+  console.log("test",svdnote,timeBlk);
+  localStorage.setItem(timeBlk,svdnote)
+
+  });
 
 
 
